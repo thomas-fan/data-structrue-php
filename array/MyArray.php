@@ -110,6 +110,24 @@ class MyArray
     }
 
     /**
+     * 获取数组第一个元素
+     * @return mixed
+     */
+    public function getFirst()
+    {
+        return $this->get(0);
+    }
+
+    /**
+     * 获取数组最后一个元素
+     * @return mixed
+     */
+    public function getLast()
+    {
+        return $this->get($this->size -1);
+    }
+
+    /**
      * 设置数组中元素
      * @param int $index
      * @param $e
