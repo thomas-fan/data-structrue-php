@@ -171,7 +171,7 @@ class MyArray
             $this->data[$i - 1] = $this->data[$i];
         }
         $this->size -- ;
-        if ($this->size == count($this->data) / 2) {
+        if ($this->size == count($this->data) / 4 && count($this->data) / 2 != 0) {
             $this->resize(count($this->data) / 2);
         }
 
