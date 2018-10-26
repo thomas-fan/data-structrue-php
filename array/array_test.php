@@ -2,9 +2,9 @@
 /**
  * 测试方法
  */
-require_once './MyArray.php';
+require_once  __DIR__ .'/MyArray.php';
 
-$array = new MyArray(20);
+$array = new MyArray();
 for ($i = 0; $i < 10; $i ++) {
     $array->addLast($i);
 }

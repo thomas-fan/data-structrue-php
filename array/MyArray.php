@@ -19,6 +19,9 @@ class MyArray
      */
     public function __construct(int $capacity = 10)
     {
+        if ($capacity < 0) {
+            throw new InvalidArgumentException('capacity must not be negative!');
+        }
         // 通过 array_fill 来生成指定长度的数组,默认为 null
         $data = array_fill(0, $capacity, null);
         $this->size = 0;
@@ -76,12 +79,12 @@ class MyArray
      */
     public function add(int $index, $e)
     {
-        if ($this->size == count($this->data)) {
-            throw new \InvalidArgumentException('Add failed. Array is full');
-        }
-
         if ($index < 0 || $index > $this->size) {
             throw new \InvalidArgumentException('Add failed. $index is inlegal');
+        }
+
+        if ($this->size == count($this->data)) {
+            $this->resize(2 * count($this->data));
         }
 
         for ($i = $this->size -1; $i >= $index; $i --) {
@@ -168,6 +171,9 @@ class MyArray
             $this->data[$i - 1] = $this->data[$i];
         }
         $this->size -- ;
+        if ($this->size == count($this->data) / 2) {
+            $this->resize(count($this->data) / 2);
+        }
 
         return $ret;
     }
@@ -218,6 +224,21 @@ class MyArray
         }
         $msg .= ']';
         return $msg;
+    }
+
+    /**
+     * 动态扩容
+     * @param int $newCapacity
+     */
+    private function resize(int $newCapacity)
+    {
+        $newData = array_fill(0, $newCapacity, null);
+
+        for($i = 0 ;$i < $this->size; $i ++) {
+            $newData[$i] = $this->data[$i];
+        }
+
+        $this->data = $newData;
     }
 }
 
