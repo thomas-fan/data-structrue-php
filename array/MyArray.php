@@ -49,7 +49,7 @@ class MyArray
      * 判断数组是否为空
      * @return bool
      */
-    public function isEmpty()
+    public function isEmpty():bool
     {
         return $this->size == 0;
     }
@@ -58,7 +58,7 @@ class MyArray
      * 在数组末尾添加元素
      * @param $e
      */
-    public function addLast($e)
+    public function addLast($e):void
     {
         $this->add($this->size, $e);
     }
@@ -67,7 +67,7 @@ class MyArray
      * 在数组首位添加元素
      * @param $e
      */
-    public function addFirst($e)
+    public function addFirst($e):void
     {
         $this->add(0, $e);
     }
@@ -77,7 +77,7 @@ class MyArray
      * @param int $index
      * @param $e
      */
-    public function add(int $index, $e)
+    public function add(int $index, $e):void
     {
         if ($index < 0 || $index > $this->size) {
             throw new \InvalidArgumentException('Add failed. $index is inlegal');
@@ -114,7 +114,7 @@ class MyArray
      * @param int $index
      * @param $e
      */
-    public function set(int $index, $e)
+    public function set(int $index, $e):void
     {
         if ($index < 0 || $index > $this->size) {
             throw new \InvalidArgumentException('Add failed. $index is inlegal');
@@ -197,10 +197,10 @@ class MyArray
     }
 
     /**
-     * 删除一个置顶元素
+     * 删除一个指定元素
      * @param $e
      */
-    public function removeElement($e)
+    public function removeElement($e):void
     {
         $index = $this->find($e);
         if ($index != -1) {
@@ -212,7 +212,7 @@ class MyArray
      * 格式化输出数组信息
      * @return string
      */
-    public function toString()
+    public function toString():string
     {
         $msg = "Array: size = {$this->size}, capacity = {$this->getCapacity()}" . PHP_EOL;
         $msg .= '[';
@@ -230,7 +230,7 @@ class MyArray
      * 动态扩容
      * @param int $newCapacity
      */
-    private function resize(int $newCapacity)
+    private function resize(int $newCapacity):void
     {
         $newData = array_fill(0, $newCapacity, null);
 
