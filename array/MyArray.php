@@ -232,16 +232,16 @@ class MyArray
      */
     public function toString():string
     {
-        $msg = "Array: size = {$this->size}, capacity = {$this->getCapacity()}" . PHP_EOL;
-        $msg .= '[';
+        $ret = "Array: size = {$this->size}, capacity = {$this->getCapacity()}" . PHP_EOL;
+        $ret .= '[';
         for ($i = 0 ; $i < $this->size; $i++) {
-            $msg .= $this->data[$i];
+            $ret .= $this->data[$i];
             if ($i != $this->size -1) {
-                $msg .= ', ';
+                $ret .= ', ';
             }
         }
-        $msg .= ']';
-        return $msg;
+        $ret .= ']';
+        return $ret;
     }
 
     /**
