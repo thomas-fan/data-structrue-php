@@ -3,3 +3,4 @@
 ## [数组](https://github.com/thomas-fan/data-structrue-php/tree/master/array)
 ## [栈](https://github.com/thomas-fan/data-structrue-php/tree/master/stack)
 ## [数组队列/循环队列](https://github.com/thomas-fan/data-structrue-php/tree/master/queue)
+## [链表](https://github.com/thomas-fan/data-structrue-php/tree/master/linkedList)
