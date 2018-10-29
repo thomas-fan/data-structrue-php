@@ -18,7 +18,7 @@ $time2 = testQueue($loop_queue, $opCount);
 echo 'LoopQueue: ' . $time2 . 's' . PHP_EOL;
 function testQueue(QueueInterface $queue, int $opCount)
 {
-    // microtime 返回微秒时间戳
+    // microtime(true) 返回秒数
     $start_time = microtime(true);
     for ($i = 0; $i < $opCount; $i ++) {
         $queue->enqueue(rand(0, 100));
