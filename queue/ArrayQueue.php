@@ -74,7 +74,7 @@ class ArrayQueue implements QueueInterface
      * 格式化输出数组信息
      * @return string
      */
-    public function toString():string
+    public function __toString():string
     {
         $ret = 'Queue:front [';
         for ($i = 0 ; $i < $this->getSize(); $i++) {

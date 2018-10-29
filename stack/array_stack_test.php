@@ -5,8 +5,8 @@ $arrayStack = new ArrayStack();
 
 for ($i = 0; $i < 5; $i ++) {
     $arrayStack->push($i);
-    echo $arrayStack->toString();
+    echo $arrayStack;
 }
 
 $arrayStack->pop();
-echo $arrayStack->toString();
+echo $arrayStack;

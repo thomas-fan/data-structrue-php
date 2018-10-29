@@ -74,7 +74,7 @@ class LoopQueue implements QueueInterface
      * 格式化输出数组信息
      * @return string
      */
-    public function toString():string
+    public function __toString():string
     {
         $ret = "Queue: size = {$this->size}, capacity = {$this->getCapacity()}" . PHP_EOL;
         $ret .= 'front [';

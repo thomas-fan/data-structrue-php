@@ -78,7 +78,7 @@ class ArrayStack implements StackInterface
      * 格式化输出栈信息
      * @return string
      */
-    public function toString():string
+    public function __toString():string
     {
         $res = "Stack: [";
         for ($i = 0; $i < $this->array->getSize(); $i ++) {

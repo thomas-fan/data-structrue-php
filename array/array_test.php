@@ -8,16 +8,16 @@ $array = new MyArray();
 for ($i = 0; $i < 10; $i ++) {
     $array->addLast($i);
 }
-echo $array->toString();
+echo $array;
 $array->add(1,100);
-echo $array->toString();
+echo $array;
 $array->addFirst(-1);
-echo $array->toString();
+echo $array;
 $array->remove(2);
-echo $array->toString();
+echo $array;
 $array->removeElement(4);
-echo $array->toString();
+echo $array;
 $array->removeFirst();
-echo $array->toString();
+echo $array;
 $array->removeLast();
-echo $array->toString();
+echo $array;
