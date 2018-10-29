@@ -4,7 +4,7 @@ require_once __DIR__ . '/Node.php';
 
 class LinkedList
 {
-    private $dummyHead;
+    private $dummyHead; // 虚拟头结点
     private $size;
 
     public function __construct()
@@ -83,7 +83,7 @@ class LinkedList
 
     public function set(int $index, $e): void
     {
-        if ($index < 0 || $index > $this->size) {
+        if ($index < 0 || $index >= $this->size) {
             throw new InvalidArgumentException('set failed. illegal index');
         }
 
@@ -94,6 +94,36 @@ class LinkedList
         }
         $cur->e = $e;
 
+    }
+
+    public function remove($index)
+    {
+        if ($index < 0 || $index >= $this->size) {
+            throw new InvalidArgumentException('remove failed. illegal index');
+        }
+
+        $prev = $this->dummyHead;
+        for ($i = 0; $i < $index; $i ++) {
+            $prev = $prev->next;
+        }
+
+        $retNode = $prev->next;
+        $prev->next = $retNode->next;
+        $retNode->next = null;
+        $this->size --;
+
+        return $retNode->e;
+
+    }
+
+    public function removeFirst()
+    {
+        return $this->remove(0);
+    }
+
+    public function removeLast()
+    {
+        return $this->remove($this->size - 1);
     }
 
     public function contains($e): bool
