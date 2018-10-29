@@ -80,7 +80,7 @@ class MyArray
     public function add(int $index, $e):void
     {
         if ($index < 0 || $index > $this->size) {
-            throw new \InvalidArgumentException('Add failed. $index is inlegal');
+            throw new \InvalidArgumentException('Add failed. $index is illegal');
         }
 
         if ($this->size == count($this->data)) {
@@ -103,7 +103,7 @@ class MyArray
     public function get(int $index)
     {
         if ($index < 0 || $index > $this->size) {
-            throw new \InvalidArgumentException('Add failed. $index is inlegal');
+            throw new \InvalidArgumentException('Add failed. $index is illegal');
         }
 
         return $this->data[$index];
@@ -135,7 +135,7 @@ class MyArray
     public function set(int $index, $e):void
     {
         if ($index < 0 || $index > $this->size) {
-            throw new \InvalidArgumentException('Add failed. $index is inlegal');
+            throw new \InvalidArgumentException('Add failed. $index is illegal');
         }
         $this->data[$index] = $e;
     }
@@ -180,7 +180,7 @@ class MyArray
     public function remove(int $index)
     {
         if ($index < 0 || $index > $this->size) {
-            throw new \InvalidArgumentException('Add failed. $index is inlegal');
+            throw new \InvalidArgumentException('Add failed. $index is illegal');
         }
 
         $ret = $this->data[$index];
