@@ -185,7 +185,7 @@ class MyArray
 
         $ret = $this->data[$index];
 
-        for ($i = $index +1; $i < $this->size -1; $i ++) {
+        for ($i = $index +1; $i < $this->size; $i ++) {
             $this->data[$i - 1] = $this->data[$i];
         }
         $this->size -- ;
